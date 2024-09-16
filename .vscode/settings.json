@@ -28,6 +28,7 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+<<<<<<< Updated upstream
   "i18n-ally.localesPaths": [
     "messages",
     "src/i18n"
