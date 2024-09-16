@@ -4,12 +4,12 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import db from '@/lib/db';
+import { getCurrentSession } from '@/lib/session';
 import { lucia } from '@/server/lucia';
-import { validateRequest } from '@/server/validate';
 
 export async function logout() {
   try {
-    const { session } = await validateRequest();
+    const session = await getCurrentSession();
 
     if (!session) {
       return {

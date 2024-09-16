@@ -1,16 +1,19 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import { getCurrentUser } from '@/lib/session';
 import { logout } from '@/server/actions/auth/logout/logout';
-import { validateRequest } from '@/server/validate';
 
 export default async function UserButton() {
-  const { user } = await validateRequest();
+  const user = await getCurrentUser();
 
   return (
     <div className="flex items-center space-x-4">
       {user && (
         <>
+          <Button asChild variant="link">
+            <Link href="/profile">Profile</Link>
+          </Button>
           <form action={logout}>
             <Button type="submit" variant="ghost">
               Logout
