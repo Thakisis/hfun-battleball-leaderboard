@@ -10,6 +10,18 @@ export const routing = defineRouting({
     '/sign-in': '/sign-in',
     '/sign-up': '/sign-up',
     '/forgot': '/forgot',
+    '/catalog/[itemgrade]': {
+      en: '/catalog/[itemgrade]',
+      es: '/catalogo/[itemgrade]',
+    },
+    '/catalog/compare': {
+      en: '/catalog/compare',
+      es: '/catalogo/comparar',
+    },
+    '/catalog/calculate': {
+      en: '/catalog/calculate',
+      es: '/catalogo/calculadora',
+    },
     '/catalog': {
       en: '/catalog',
       es: '/catalogo',

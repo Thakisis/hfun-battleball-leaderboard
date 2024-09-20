@@ -1,16 +1,19 @@
 import { Terminal } from 'lucide-react';
 
-import { CatalogTabs } from '@/components/habbo/catalog/catalog-tabs';
+import { CategorySearch, CategoryTabs } from '@/components/catalog/category';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { fetchCatalogData } from '@/server/actions/catalog/fetch-catalog-data';
 
 export const revalidate = 3600; // Revalidate every hour
 
-export default async function CatalogPage() {
-  const catalogData = await fetchCatalogData();
-
+export default function ItemgradeLayout({
+  children,
+  params: { itemgrade, locale },
+}: {
+  children: React.ReactNode;
+  params: { itemgrade: string; locale: string };
+}) {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 noShift space-y-4">
       <Alert className="p-4 rounded-md mb-4">
         <Terminal className="h-4 w-4" />
         <AlertTitle>Warning!</AlertTitle>
@@ -18,7 +21,9 @@ export default async function CatalogPage() {
           Some data might be test data yet.
         </AlertDescription>
       </Alert>
-      <CatalogTabs catalogData={catalogData} />
+      <CategorySearch />
+      <CategoryTabs itemgrade={itemgrade} />
+      {children}
     </div>
   );
 }

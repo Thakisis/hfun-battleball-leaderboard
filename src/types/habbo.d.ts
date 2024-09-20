@@ -1,3 +1,8 @@
+import { CatalogCategory } from '@/components/catalog-category';
+
+import { CatalogItemHistory } from './habbo';
+import { CatalogItem } from './habbo.d';
+
 export interface HabboUserInfo {
   uniqueId: string;
   name: string;
@@ -27,19 +32,39 @@ export interface HabboErrorResponse {
 }
 
 export interface CatalogItem {
+  id: number;
   name: string;
   description: string;
   price: number;
   imageUrl: string;
-  priceHistory: { date: string; price: number }[];
   releaseDate?: Date;
+  category: string;
+  CatalogCategory: string;
 }
+
+export type ItemPriceHistory = PriceHistoryEntry[];
 
 export interface PriceHistoryEntry {
   date: string;
   price: number;
 }
 
+export interface CatalogItemHistory extends CatalogItem {
+  priceHistory: ItemPriceHistory;
+}
+export interface CatalogItemHistorya {
+  name: string;
+  description: string;
+  price: number;
+  imageUrl: string;
+  priceHistory: ItemPriceHistory;
+  releaseDate?: Date;
+}
+
 export interface CatalogData {
-  [category: string]: CatalogItem[];
+  items: CatalogItem[];
+  totalPages: number;
+  currentPage: number;
+  pageSize: number;
+  totalItems: number;
 }

@@ -67,3 +67,8 @@
     @apply bg-background text-foreground;
   }
 }
+@layer components {
+  .noShift {
+    padding-left: calc(100vw - 100%);
+  }
+}

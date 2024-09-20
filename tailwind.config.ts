@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      gridTemplateAreas: {
+        TabsCatalog: [' tab1 tab2 tab3 tab4'],
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },
@@ -83,7 +86,10 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@savvywombat/tailwindcss-grid-areas'),
+  ],
 } satisfies Config;
 
 export default config;

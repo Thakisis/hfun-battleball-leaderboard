@@ -13,8 +13,8 @@ import { LanguageToggle } from '../languaje-switcher/language-switcher';
 
 export function PageHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full p-2 sm:p-4">
-      <div className="container mx-auto">
+    <header className=" sticky top-0 z-50  noShift">
+      <div className="container mx-auto p-2 sm:p-4">
         <div className="bg-background/70 backdrop-blur-sm rounded-lg shadow-lg">
           <div className="px-2 sm:px-4 py-3">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-2">

@@ -53,8 +53,11 @@ export default async function LocaleLayout({
         <Providers>
           <PageHeader />
           {modal}
-          <main className="flex justify-center flex-grow">{children}</main>
+
           <PageFooter />
+          <main className=" noShift flex justify-center flex-grow scrollbar-gutter-auto scrollbar-both-edges scrollbar-thumb-orange-500 scrollbar-track-orange-100 scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
