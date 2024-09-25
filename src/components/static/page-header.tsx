@@ -1,3 +1,5 @@
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { ActivityLogIcon } from '@radix-ui/react-icons';
 import { Menu } from 'lucide-react';
 
 import UserButton from '@/components/auth/user/user-button';

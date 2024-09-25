@@ -32,8 +32,6 @@ export async function rawfetchItem({
 
   // Construct and return the CatalogData object
 
-  console.log('fetched');
-
   if (!item) {
     throw new Error(`Failed to fetch catalog item with id: ${id} `);
   }

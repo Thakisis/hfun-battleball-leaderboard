@@ -23,10 +23,8 @@ export function CategoryTabsClient({ children }: Props) {
     'grid-cols-4',
   ];
   const pathname = useParams();
-  useEffect(() => {
-    console.log('rerender');
-  }, []);
-  console.log(selected, pathname);
+  useEffect(() => {}, []);
+
   return (
     <div
       role="tablist"

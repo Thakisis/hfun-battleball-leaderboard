@@ -1,4 +1,5 @@
 import type * as React from 'react';
+import { Suspense } from 'react';
 
 import {
   Card,
@@ -36,7 +37,9 @@ export async function CatalogCategory({
       </CardHeader>
       <CardContent>
         <Separator className="mb-4" />
-        <CategoryClient>{children}</CategoryClient>
+        <Suspense fallback={<div className="text-center">Loading...</div>}>
+          <CategoryClient>{children}</CategoryClient>
+        </Suspense>
       </CardContent>
     </Card>
   );

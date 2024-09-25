@@ -39,7 +39,7 @@ export async function rawfetchItemsCategory({
       `Fetch operation completed. Retrieved ${items.length} items out of ${totalItems} total.`,
     );
   }
-  console.log(items);
+
   // Construct and return the CatalogData object
   const catalogData: CatalogData = {
     items,

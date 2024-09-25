@@ -19,7 +19,7 @@ export async function CategoryList({ category }: CatalogCategoryProps) {
   const { items } = catalogData;
 
   return items.map((item: CatalogItemType) => (
-    <CatalogItemClient key={item.name}>
+    <CatalogItemClient key={item.name} item={item}>
       <CatalogItem {...item} />
     </CatalogItemClient>
   ));
